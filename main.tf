@@ -57,7 +57,7 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["*al2023-ami-2023.3.*-kernel-6.1-x86_64*"]
+    values = ["*al2023-ami-2023.4.*-kernel-6.1-x86_64*"]
   }
 
   filter {
@@ -117,7 +117,7 @@ EOF
 }
 
 resource "aws_instance" "web" {
-  ami             = "ami-00fa32593b478ad6e"
+  ami             = "ami-04c913012f8977029"
   instance_type   = "t2.xlarge" 
   key_name        = var.key_name
   iam_instance_profile = "${aws_iam_instance_profile.test_profile.name}"

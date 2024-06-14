@@ -1,6 +1,6 @@
-aws_region = "ap-south-1"
+aws_region = "ap-southeast-1"
 
-vpc_id = "vpc-0d169a5906b618f48"
+vpc_id = "vpc-0aca8658862e60802"
 
 cidr_block = "172.31.0.0/16"
 
