@@ -118,13 +118,17 @@ EOF
 
 resource "aws_instance" "web" {
   ami             = "ami-04c913012f8977029"
-  instance_type   = "t2.xlarge" 
+  instance_type   = "t2.medium" 
   key_name        = var.key_name
   iam_instance_profile = "${aws_iam_instance_profile.test_profile.name}"
   security_groups = [aws_security_group.jenkins_sg.name]
   user_data       = "${file("install_jenkins.sh")}"
   tags = {
     Name = "Jenkins"
+  }
+root_block_device {
+    volume_size = 30
+    
   }
 }
 
